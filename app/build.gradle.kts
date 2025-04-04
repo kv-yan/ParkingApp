@@ -39,6 +39,10 @@ android {
     buildFeatures {
         compose = true
     }
+
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 dependencies {
@@ -74,4 +78,7 @@ dependencies {
 
     // system ui controller
     implementation(libs.accompanist.systemuicontroller)
+
+    // datastore
+    implementation(libs.androidx.datastore.preferences)
 }

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ParkingApp</string>
+    <string name="choose_a_time_period">Ընտրեք ժամանակահատվածը</string>
+    <string name="settings">Կարգավորումներ</string>
+    <string name="total_revenue">Ընդհանուր եկամուտ</string>
+    <string name="currency">֏%1$s</string>
+    <string name="total_cars_parked">Ընդհանուր կայանված մեքենաներ</string>
+    <string name="cars_quantity">%1$s մեքենաներ</string>
+    <string name="average_parking_time">Միջին կայանման ժամանակը</string>
+    <string name="now">Այս պահին</string>
+    <string name="parking_lots_occupied">Զբաղեցված ավտոկայանատեղիներ</string>
+    <string name="total_spot">" / %1$s"</string>
+    <string name="parking_occupancy">Կայանատեղի զբաղվածություն</string>
+    <string name="back">Ետ</string>
+    <string name="language">Լեզու</string>
+
+    <string name="today">Այսօր</string>
+    <string name="yesterday">Երեկ</string>
+    <string name="two_days_ago">2 Օր առաջ</string>
+    <string name="three_days_ago">3 Օր առաջ</string>
+    <string name="last_week">Անցած շաբաթ</string>
+    <string name="last_month">Անցած ամիս</string>
+    <string name="days_format">%1$d օր %2$s</string>
+    <string name="hours_format">%1$d ժ․ %2$s</string>
+    <string name="minutes_format">%1$d ր․</string>
+    <string name="hour_singular">%1$d ժ․</string>
+    <string name="minute_singular">%1$d ր․</string>
+</resources>

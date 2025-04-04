@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ParkingApp</string>
+    <string name="choose_a_time_period">Выберите период времени</string>
+    <string name="settings">Настройки</string>
+    <string name="total_revenue">Общий доход</string>
+    <string name="currency">$%1$s</string>
+    <string name="total_cars_parked">Всего припаркованных автомобилей</string>
+    <string name="cars_quantity">%1$s автомобили</string>
+    <string name="average_parking_time">Среднее время парковки</string>
+    <string name="now">Сейчас</string>
+    <string name="parking_lots_occupied">Занятые парковочные места</string>
+    <string name="total_spot">" / %1$s"</string>
+    <string name="parking_occupancy">Занятость парковки</string>
+    <string name="back">Назад</string>
+    <string name="language">Язык</string>
+
+    <string name="today">Сегодня</string>
+    <string name="yesterday">Вчера</string>
+    <string name="two_days_ago">2 дня назад</string>
+    <string name="three_days_ago">3 дня назад</string>
+    <string name="last_week">Последняя неделя</string>
+    <string name="last_month">Последний месяц</string>
+    <string name="days_format">%1$d дней %2$s</string>
+    <string name="hours_format">%1$d ч. %2$s</string>
+    <string name="minutes_format">%1$d м.</string>
+    <string name="hour_singular">%1$d ч.</string>
+    <string name="minute_singular">%1$d м.</string>
+</resources>

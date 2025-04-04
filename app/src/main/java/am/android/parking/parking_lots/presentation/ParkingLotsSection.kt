@@ -22,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -45,7 +46,7 @@ fun ParkingLotsSection(
 
     Text(
         modifier = modifier,
-        text = "Now",
+        text = stringResource(R.string.now),
         fontFamily = FontFamily(Font(R.font.gilroy_bold)),
         fontSize = 16.sp,
         color = SubTitleColor
@@ -62,8 +63,8 @@ fun ParkingLotsSection(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 30.dp ,bottom = 8.dp),
-                text = "Parking Lots Occupied",
+                modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 30.dp, bottom = 8.dp),
+                text = stringResource(R.string.parking_lots_occupied),
                 fontFamily = FontFamily(Font(R.font.gilroy_bold)),
                 fontSize = 16.sp,
                 color = SubTitleColor
@@ -71,10 +72,10 @@ fun ParkingLotsSection(
             Text(
                 modifier = Modifier.padding(horizontal = 32.dp), text = buildAnnotatedString {
                     withStyle(style = SpanStyle(color = MainRed)) {
-                        append("${lotsStatus?.occupiedSpots}")
+                        append(lotsStatus?.occupiedSpots.toString())
                     }
                     withStyle(style = SpanStyle(color = ValueColor)) {
-                        append(" / ${lotsStatus?.totalSpots}")
+                        append(stringResource(R.string.total_spot, lotsStatus?.totalSpots ?: 0))
                     }
                 }, style = TextStyle(
                     fontSize = 20.88.sp,
@@ -84,13 +85,15 @@ fun ParkingLotsSection(
             )
 
             HorizontalDivider(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 24.dp),
                 thickness = 1.dp,
                 color = SubTitleColor.copy(0.7f)
             )
             Text(
                 modifier = Modifier.padding(start = 24.dp, top = 12.dp, bottom = 8.dp),
-                text = "Parking Occupancy",
+                text = stringResource(R.string.parking_occupancy),
                 style = TextStyle(
                     fontSize = 15.66.sp,
                     fontFamily = FontFamily(Font(R.font.gilroy_bold)),

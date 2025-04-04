@@ -16,11 +16,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -31,6 +36,7 @@ import org.koin.androidx.compose.koinViewModel
 fun AnalyticsScreen(
     modifier: Modifier = Modifier,
     viewModel: AnalyticsViewModel = koinViewModel(),
+    onNavigateToSettings: () -> Unit = {},
 ) {
     val analytics by viewModel.analytics.collectAsState()
     val timePeriods by viewModel.timePeriods.collectAsState()
@@ -47,19 +53,32 @@ fun AnalyticsScreen(
             .verticalScroll(mainVerticalScroll)
             .statusBarsPadding()
     ) {
-        Text(
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
-            text = "Choose a time period",
-            fontFamily = FontFamily(Font(R.font.gilroy_bold)),
-            fontSize = 16.sp,
-            color = SubTitleColor,
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+                text = stringResource(R.string.choose_a_time_period),
+                fontFamily = FontFamily(Font(R.font.gilroy_bold)),
+                fontSize = 16.sp,
+                color = SubTitleColor,
+            )
+
+            IconButton(
+                modifier = Modifier, onClick = onNavigateToSettings
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.Settings,
+                    contentDescription = stringResource(R.string.settings),
+                    tint = SubTitleColor
+                )
+            }
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .horizontalScroll(horizontalScroll)
-                .padding(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                .padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
 
             timePeriods.forEach {
@@ -72,20 +91,20 @@ fun AnalyticsScreen(
 
         AnalyticsCard(
             modifier = Modifier.padding(vertical = 16.dp),
-            title = "Total Revenue",
-            value = "$${analytics?.totalRevenue}",
+            title = stringResource(R.string.total_revenue),
+            value = stringResource(R.string.currency, analytics?.totalRevenue ?: 0),
             valueColor = ValueColor
         )
 
         AnalyticsCard(
             modifier = Modifier.padding(bottom = 16.dp),
-            title = "Total Cars Parked",
-            value = "${analytics?.carsParked} cars",
+            title = stringResource(R.string.total_cars_parked),
+            value = stringResource(R.string.cars_quantity, analytics?.carsParked ?: 0),
             valueColor = ValueColor
         )
 
         AnalyticsCard(
-            title = "Average Parking Time",
+            title = stringResource(R.string.average_parking_time),
             value = viewModel.formatDuration(analytics?.averageParkingTime ?: 0),
             valueColor = ValueColor
         )

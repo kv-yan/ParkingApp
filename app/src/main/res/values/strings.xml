@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">ParkingApp</string>
+    <string name="choose_a_time_period">Choose a time period</string>
+    <string name="settings">Settings</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="currency">$%1$s</string>
+    <string name="total_cars_parked">Total Cars Parked</string>
+    <string name="cars_quantity">%1$s cars</string>
+    <string name="average_parking_time">Average Parking Time</string>
+    <string name="now">Now</string>
+    <string name="parking_lots_occupied">Parking Lots Occupied</string>
+    <string name="total_spot">" / %1$s"</string>
+    <string name="parking_occupancy">Parking Occupancy</string>
+    <string name="back">Back</string>
+    <string name="language">Language</string>
+
+    <!-- values/strings.xml -->
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="two_days_ago">2 Days Ago</string>
+    <string name="three_days_ago">3 Days Ago</string>
+    <string name="last_week">Last Week</string>
+    <string name="last_month">Last Month</string>
+    <string name="days_format">%1$d days %2$s</string>
+    <string name="hours_format">%1$d hr %2$s</string>
+    <string name="minutes_format">%1$d min</string>
+    <string name="hour_singular">%1$d hr</string>
+    <string name="minute_singular">%1$d min</string>
 </resources>
