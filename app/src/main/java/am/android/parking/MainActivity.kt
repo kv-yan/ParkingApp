@@ -1,10 +1,7 @@
 package am.android.parking
 
 import am.android.parking.navigation.AppNavigation
-import am.android.parking.settings.data.datastore.LanguagePreferenceDataStore
 import am.android.parking.settings.data.helper.LanguageChangeHelper
-import am.android.parking.settings.domain.model.AppLanguages
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+
 
 class MainActivity : ComponentActivity() {
 
@@ -23,7 +21,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            val currentLanguageCode: String = languageChangeHelper.getLanguageCode(applicationContext)
+            val currentLanguageCode: String =
+                languageChangeHelper.getLanguageCode(applicationContext)
 
             var currentLanguage by remember { mutableStateOf(currentLanguageCode) }
 

@@ -3,7 +3,7 @@
     <string name="choose_a_time_period">Ընտրեք ժամանակահատվածը</string>
     <string name="settings">Կարգավորումներ</string>
     <string name="total_revenue">Ընդհանուր եկամուտ</string>
-    <string name="currency">֏%1$s</string>
+    <string name="currency">$%1$s</string>
     <string name="total_cars_parked">Ընդհանուր կայանված մեքենաներ</string>
     <string name="cars_quantity">%1$s մեքենաներ</string>
     <string name="average_parking_time">Միջին կայանման ժամանակը</string>
