@@ -8,4 +8,8 @@ sealed class Destination {
 
     @Serializable
     data object Analytics : Destination()
+
+    @Serializable
+    data object Diagrams : Destination()
+
 }

@@ -13,6 +13,11 @@
     <string name="parking_occupancy">Parking Occupancy</string>
     <string name="back">Back</string>
     <string name="language">Language</string>
+    <string name="by_month">By Month</string>
+    <string name="parking_occupancy_last_12_months">Parking Occupancy Last 12 Months</string>
+
+
+
 
     <!-- values/strings.xml -->
     <string name="today">Today</string>

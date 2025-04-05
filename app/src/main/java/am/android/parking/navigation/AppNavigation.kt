@@ -1,15 +1,12 @@
 package am.android.parking.navigation
 
-import am.android.parking.MainActivity
 import am.android.parking.analytics.presentation.AnalyticsScreen
+import am.android.parking.diagrams.presentation.DiagramsScreen
 import am.android.parking.settings.presentation.SettingsScreen
-import am.android.parking.settings.presentation.SettingsViewModel
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
@@ -17,9 +14,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun AppNavigation(
@@ -29,20 +23,24 @@ fun AppNavigation(
 ) {
     val navController = rememberNavController()
     val systemUiController = rememberSystemUiController()
-    val currentDestination by navController.currentBackStackEntryAsState()
 
     systemUiController.systemBarsDarkContentEnabled = true
 
-    LaunchedEffect(currentDestination) {
-        when (currentDestination?.destination?.route) {
-            Destination.Settings::class.qualifiedName -> {
-                systemUiController.systemBarsDarkContentEnabled = false
-            }
-            else -> {
-                systemUiController.systemBarsDarkContentEnabled = true
+    /*
+        val currentDestination by navController.currentBackStackEntryAsState()
+
+        LaunchedEffect(currentDestination) {
+            when (currentDestination?.destination?.route) {
+                Destination.Settings::class.qualifiedName -> {
+                    systemUiController.systemBarsDarkContentEnabled = false
+                }
+
+                else -> {
+                    systemUiController.systemBarsDarkContentEnabled = true
+                }
             }
         }
-    }
+    */
 
     NavHost(
         modifier = modifier.fillMaxSize(),
@@ -64,8 +62,17 @@ fun AppNavigation(
             AnalyticsScreen(
                 onNavigateToSettings = {
                     navController.navigate(Destination.Settings)
+                },
+                onNavigateToDiagrams = {
+                    navController.navigate(Destination.Diagrams)
                 }
             )
+        }
+
+        composable<Destination.Diagrams> {
+            DiagramsScreen {
+                navController.popBackStack()
+            }
         }
     }
 }

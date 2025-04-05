@@ -13,6 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 val MainBlue = Color(0xFF5141C0)
 val ScreenBackground = Color(0xFFF2F2F7)
 val SubTitleColor  = Color(0xFF6C6971)
+val Gray600  = Color(0xFF757575)
 val ValueColor = Color(0xFF413B89)
 val MainRed = Color(0xFFE31717)
 

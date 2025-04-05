@@ -37,6 +37,7 @@ fun AnalyticsScreen(
     modifier: Modifier = Modifier,
     viewModel: AnalyticsViewModel = koinViewModel(),
     onNavigateToSettings: () -> Unit = {},
+    onNavigateToDiagrams: () -> Unit = {},
 ) {
     val analytics by viewModel.analytics.collectAsState()
     val timePeriods by viewModel.timePeriods.collectAsState()
@@ -59,7 +60,7 @@ fun AnalyticsScreen(
             Text(
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
                 text = stringResource(R.string.choose_a_time_period),
-                fontFamily = FontFamily(Font(R.font.gilroy_bold)),
+                fontFamily = FontFamily(Font(R.font.gilroy_semi_bold)),
                 fontSize = 16.sp,
                 color = SubTitleColor,
             )
@@ -85,8 +86,16 @@ fun AnalyticsScreen(
                 AnalyticsButton(
                     text = it.first,
                     isCurrent = analyticsShowingType == it.second,
-                    onClick = { viewModel.setShowingType(it.second) })
+                    onClick = { viewModel.setShowingType(it.second) }
+                )
             }
+
+            AnalyticsButton(
+                text = stringResource(R.string.by_month),
+                isCurrent = false,
+                onClick = onNavigateToDiagrams
+            )
+
         }
 
         AnalyticsCard(

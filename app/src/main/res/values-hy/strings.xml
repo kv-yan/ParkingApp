@@ -13,6 +13,9 @@
     <string name="parking_occupancy">Կայանատեղի զբաղվածություն</string>
     <string name="back">Ետ</string>
     <string name="language">Լեզու</string>
+    <string name="by_month">Ըստ ամիսների</string>
+    <string name="parking_occupancy_last_12_months">Ավտոկայանատեղի զբաղ. վերջին 12 ամիս.</string>
+
 
     <string name="today">Այսօր</string>
     <string name="yesterday">Երեկ</string>

@@ -13,6 +13,8 @@
     <string name="parking_occupancy">Занятость парковки</string>
     <string name="back">Назад</string>
     <string name="language">Язык</string>
+    <string name="by_month">По месяцу</string>
+    <string name="parking_occupancy_last_12_months">Занятость парковки за последние 12 м.</string>
 
     <string name="today">Сегодня</string>
     <string name="yesterday">Вчера</string>
@@ -25,4 +27,5 @@
     <string name="minutes_format">%1$d м.</string>
     <string name="hour_singular">%1$d ч.</string>
     <string name="minute_singular">%1$d м.</string>
+
 </resources>
